@@ -1,0 +1,15 @@
+svg {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  
+  path {
+    cursor: pointer;
+    transition: fill 0.3s;
+  }
+  
+  path:hover {
+    fill: #ffcc00;
+  }
+  

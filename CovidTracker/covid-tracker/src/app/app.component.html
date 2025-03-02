@@ -1,0 +1,33 @@
+<div class="container">
+  <h1>COVID-19 Cases: India</h1>
+
+  <app-india-with-states #indiaWithStates (levelSelected)="onLevelSelected($event)"></app-india-with-states>
+  <!-- Back Button -->
+   <div>
+  <button  class="back-btn" *ngIf="selectedLevel !== 'state'" (click)="onBack()">← Back</button>
+  </div>
+  <!-- Show State List Initially -->
+  <app-item-list
+    *ngIf="selectedLevel === 'state'"
+    [title]="'State-wise COVID Cases'"
+    [items]="selectedItems"
+    (itemClick)="onListItemClick($event)">
+  </app-item-list>
+
+  <!-- Show District List When a State is Selected -->
+  <app-item-list
+    *ngIf="selectedLevel === 'district'"
+    [title]="'Districts in ' + selectedName"
+    [items]="selectedItems"
+    (itemClick)="onListItemClick($event)">
+  </app-item-list>
+
+  <!-- Show City List When a District is Selected -->
+  <app-item-list
+    *ngIf="selectedLevel === 'city'"
+    [title]="'Cities in ' + selectedName"
+    [items]="selectedItems">
+  </app-item-list>
+
+  
+</div>

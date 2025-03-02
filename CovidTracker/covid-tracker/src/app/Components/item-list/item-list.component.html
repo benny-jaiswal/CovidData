@@ -1,0 +1,14 @@
+<div class="item-list-container">
+  <h2 class="list-title">{{ title }}</h2>
+
+  <div class="list">
+    <div class="item-tile" *ngFor="let item of items; trackBy: trackByFn" (click)="itemClick.emit(item.name)">
+      <p class="item-name">{{ item.name }}</p>
+      <div class="covid-data">
+        <span class="confirmed">XX Confirmed</span>
+        <span class="recovered">XX Recovered</span>
+        <span class="deceased">XX Deceased</span>
+      </div>
+    </div>
+  </div>
+</div>
